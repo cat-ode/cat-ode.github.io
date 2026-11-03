@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cat-ode · YouTube y tu música, sin anuncios</title>
+<meta name="description" content="Cat-ode: YouTube y tu música sin anuncios, con la pantalla apagada, descargas y tu biblioteca de Spotify, YouTube Music y Amazon Music. Gratis para Android, Windows y Linux.">
+<meta property="og:title" content="Cat-ode · YouTube y tu música, sin anuncios y gratis">
+<meta property="og:description" content="Sin anuncios, con la pantalla apagada, descargas y tu música de Spotify, YouTube Music y Amazon Music. Android, Windows y Linux.">
+<meta property="og:image" content="a/portada.jpg">
+<link rel="icon" href="a/icono.svg">
+<style>
+@font-face { font-family: R; src: url(a/Roboto-400.ttf); font-weight: 400; font-display: swap; }
+@font-face { font-family: R; src: url(a/Roboto-700.ttf); font-weight: 700; font-display: swap; }
+:root { --n: #FF7A00; --n2: #FFB054; --fondo: #0B0D12; --carta: #151922; --borde: #252B36; --tinta: #F4F5F7; --gris: #A9AEB8; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: R, system-ui, sans-serif; background: var(--fondo); color: var(--tinta); line-height: 1.5;
+  background-image: radial-gradient(900px 600px at 85% -10%, rgba(255,122,0,.18), transparent 70%),
+                    radial-gradient(700px 700px at -10% 110%, rgba(255,122,0,.10), transparent 70%); background-attachment: fixed; }
+a { color: var(--n2); }
+.envoltura { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 32px; padding: 40px 0 24px; }
+header img.logo { width: 220px; height: 220px; flex: none; }
+header h1 { font-size: clamp(44px, 8vw, 72px); line-height: 1; letter-spacing: -1px; }
+header p.lema { font-size: clamp(20px, 3.4vw, 28px); color: var(--gris); margin-top: 10px; }
+header p.lema b { color: var(--n); }
+.botones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.boton { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border-radius: 14px; font-weight: 700; font-size: 18px;
+  text-decoration: none; color: #111; background: var(--n); }
+.boton.sec { background: transparent; color: var(--tinta); border: 2px solid var(--borde); }
+.video { display: grid; grid-template-columns: minmax(0, 360px) 1fr; gap: 32px; align-items: center; margin: 24px 0 8px; }
+.video video { width: 100%; border-radius: 22px; background: #000; box-shadow: 0 30px 90px rgba(0,0,0,.6), 0 0 0 2px var(--borde); }
+h2 { font-size: clamp(28px, 4.5vw, 38px); margin: 48px 0 18px; letter-spacing: -.5px; }
+h2 b { color: var(--n); }
+.rejilla { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+.carta { background: var(--carta); border: 1px solid var(--borde); border-radius: 18px; padding: 20px; }
+.carta .i { font-size: 30px; }
+.carta h3 { font-size: 20px; margin: 8px 0 6px; }
+.carta p { color: var(--gris); font-size: 16px; }
+.estrella { border-color: rgba(255,122,0,.5); background: linear-gradient(180deg, rgba(255,122,0,.10), var(--carta)); }
+ol.pasos { counter-reset: p; list-style: none; display: grid; gap: 12px; }
+ol.pasos li { counter-increment: p; position: relative; padding: 16px 18px 16px 64px; background: var(--carta); border: 1px solid var(--borde); border-radius: 16px; }
+ol.pasos li::before { content: counter(p); position: absolute; left: 16px; top: 14px; width: 34px; height: 34px; border-radius: 50%;
+  display: grid; place-items: center; font-weight: 700; color: #111; background: var(--n); }
+.descargas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.descargas .carta h3 { font-size: 24px; }
+.descargas .boton { margin: 14px 0 10px; }
+.descargas ol.pasos { margin: 6px 0 10px; }
+.descargas ol.pasos li { padding: 10px 12px 10px 52px; font-size: 15px; color: var(--gris); }
+.descargas ol.pasos li::before { left: 12px; top: 9px; width: 28px; height: 28px; font-size: 14px; }
+.descargas p { color: var(--gris); font-size: 15px; }
+.descargas p.para { color: var(--tinta); }
+p.nota { color: var(--gris); margin: -6px 0 16px; }
+code { background: #0A0C10; border: 1px solid var(--borde); border-radius: 6px; padding: 1px 6px; font-size: 13px; color: #DDE1E8; }
+pre { background: #0A0C10; border: 1px solid var(--borde); border-radius: 12px; padding: 12px; overflow-x: auto; font-size: 13px; color: #DDE1E8; white-space: pre; }
+ul.lista { padding-left: 20px; color: var(--gris); }
+ul.lista li { margin: 6px 0; }
+ul.lista b { color: var(--tinta); }
+footer { color: #7C828D; font-size: 14px; padding: 48px 0 40px; border-top: 1px solid var(--borde); margin-top: 56px; }
+@media (max-width: 720px) {
+  header { gap: 16px; padding-top: 24px; }
+  header img.logo { width: 140px; height: 140px; }
+  .video { grid-template-columns: 1fr; }
+  .video video { max-width: 360px; margin: 0 auto; display: block; }
+}
+</style>
+</head>
+<body>
+<div class="envoltura">
+
+<header>
+  <img class="logo" src="a/logo.webp" alt="Logo de Cat-ode: un gato con cascos y el botón de reproducir">
+  <div>
+    <h1>Cat-ode</h1>
+    <p class="lema">YouTube y tu música, <b>sin anuncios</b> y gratis.</p>
+    <div class="botones">
+      <a class="boton" href="#descargar">📲 Descargar gratis</a>
+      <a class="boton sec" href="#arregla">🔧 Se arregla sola</a>
+    </div>
+  </div>
+</header>
+
+<section class="video">
+  <video src="a/Cat-ode.mp4" poster="a/portada.jpg" controls playsinline preload="metadata"></video>
+  <div>
+    <h2 style="margin-top:0">Lo que YouTube <b>no te da ni pagando</b></h2>
+    <ul class="lista">
+      <li><b>Sin anuncios</b>, ni antes ni durante los vídeos.</li>
+      <li><b>Se salta los patrocinios</b> que mete el propio youtuber (SponsorBlock).</li>
+      <li><b>Vuelven los «No me gusta»</b> (estimación de Return YouTube Dislike).</li>
+      <li><b>Fulmina un canal</b> y desaparece de todas partes, también de sus colaboraciones; y <b>filtra temas</b> con unas palabras.</li>
+      <li><b>Sin notificaciones</b>, y para ver no hace falta tu cuenta de Google: tu historial se queda en tu aparato.</li>
+    </ul>
+  </div>
+</section>
+
+<h2>Las <b>estrellas</b></h2>
+<div class="rejilla">
+  <div class="carta estrella"><div class="i">🌙</div><h3>Suena con la pantalla apagada</h3><p>Bloqueas el móvil, lo guardas en el bolsillo y sigue sonando, con «Siguiente» en la pantalla de bloqueo. En YouTube eso es Premium; aquí, gratis.</p></div>
+  <div class="carta estrella"><div class="i">🎵</div><h3>Toda tu música en un sitio</h3><p>Importas tu biblioteca de Spotify (el archivo de «Descargar tus datos» o el enlace de una lista), YouTube Music y Amazon Music (un CSV). Sin anuncios, saltas las que quieras y, al acabar, suena otra canción de verdad, no la misma en otra subida.</p></div>
+  <div class="carta estrella"><div class="i">⬇️</div><h3>Descargas de verdad</h3><p>El vídeo en la calidad que elijas o solo el sonido, como archivos normales en tu galería y en tu música. No caducan.</p></div>
+  <div class="carta estrella"><div class="i">🗂️</div><h3>Como un navegador</h3><p>Pestañas, también en el móvil; dos vídeos a la vez con una ventanita flotante; y un minirreproductor que se esconde sin cortar la música.</p></div>
+</div>
+
+<h2 id="arregla">¿YouTube la rompe? <b>Se arregla sola.</b></h2>
+<ol class="pasos">
+  <li><b>Un vigía la prueba varias veces al día.</b> YouTube cambia cosas para frenar apps como esta; el vigía lo nota enseguida.</li>
+  <li><b>Busca el arreglo:</b> prueba motores nuevos y otra forma de pedirle los vídeos a YouTube.</li>
+  <li><b>Publica la versión arreglada.</b></li>
+  <li><b>Tu Cat-ode se actualiza sola</b>, sin cortar lo que esté sonando. Busca el arreglo al abrirse, cada 20-30 minutos y en cuanto fallan dos vídeos; mientras, te avisa: «YouTube ha cambiado algo; el arreglo está en camino».</li>
+</ol>
+<p style="color:var(--gris); margin-top:12px">Y distingue una avería de un «¿eres un bot?» de YouTube, para no actualizarse en balde.</p>
+
+<h2>Y <b>todo lo demás</b></h2>
+<div class="rejilla">
+  <div class="carta"><h3>Para descubrir</h3><p>«Para ti» hecho con lo que ves y tus canales, que no se acaba; suscripciones por fecha, sin algoritmo, con «No vistos»; explorar por temas; buscador con filtros y voz; Shorts; y «Para Nut», vídeos para gatos.</p></div>
+  <div class="carta"><h3>Viendo un vídeo</h3><p>Calidad (la que eliges es la que ves), velocidad, subtítulos, capítulos, transcripción con buscador, comentarios, cola y listas, repetir, temporizador, directos, imagen en imagen y modo ambiente.</p></div>
+  <div class="carta"><h3>Tus cosas</h3><p>Historial con buscador (pausar o borrar), Ver más tarde, Me gusta y listas. «Traer mi YouTube» copia tus canales, historial, me gusta y listas; también desde Google Takeout. Compartir desde el minuto en el que vas.</p></div>
+  <div class="carta"><h3>Móvil y ordenador</h3><p>Doble toque para saltar 10 s, deslizar para minimizar, girar para pantalla completa (con candado). En el ordenador, los atajos de YouTube, vista previa al pasar el ratón, modo cine y pestañas con botón central.</p></div>
+</div>
+
+<h2 id="descargar"><b>Descárgala</b> gratis</h2>
+<p class="nota">Elige tu sistema. Cada paquete trae dentro todo lo que necesita y, una vez instalada, Cat-ode se actualiza sola.</p>
+<div class="descargas">
+  <div class="carta" id="android">
+    <h3>📲 Android</h3>
+    <p class="para">Móviles y tabletas con Android 11 o más.</p>
+    <a class="boton" href="https://github.com/cat-ode/cat-ode.github.io/releases/download/descargas/Cat-ode.apk">Descargar (9 MB)</a>
+    <ol class="pasos">
+      <li>Abre el archivo descargado (en la notificación de la descarga o en «Descargas»).</li>
+      <li>Si te pide permiso para «instalar aplicaciones desconocidas», actívalo para tu navegador y vuelve atrás.</li>
+      <li>Pulsa «Instalar». Si avisa de que puede ser dañino o sale Play Protect: «Instalar de todos modos».</li>
+      <li>Ábrela y, para traer tus canales: pestaña «Tú» → «Traer mi YouTube».</li>
+    </ol>
+    <p>La primera actualización pide un toque; las demás llegan solas.</p>
+  </div>
+  <div class="carta" id="windows">
+    <h3>💻 Windows 10 u 11</h3>
+    <p class="para">Ordenadores con Windows de 64 bits.</p>
+    <a class="boton" href="https://github.com/cat-ode/cat-ode.github.io/releases/download/descargas/Cat-ode-Setup.exe">Descargar (150 MB)</a>
+    <ol class="pasos">
+      <li>Abre <b>Cat-ode-Setup.exe</b>.</li>
+      <li>Si sale «Windows protegió su PC»: «Más información» → «Ejecutar de todas formas».</li>
+      <li>Sigue el instalador. No pide permisos de administrador.</li>
+      <li>Al abrirla, pulsa «Traer mi YouTube».</li>
+    </ol>
+  </div>
+  <div class="carta" id="linux">
+    <h3>🐧 Linux</h3>
+    <p class="para"><b>Ubuntu, Debian, Linux Mint, Pop!_OS, Zorin, elementary…</b></p>
+    <a class="boton" href="https://github.com/cat-ode/cat-ode.github.io/releases/download/descargas/cat-ode_amd64.deb">Descargar el .deb (153 MB)</a>
+    <ol class="pasos">
+      <li>Abre el archivo con doble clic: se abre el instalador de programas de tu sistema.</li>
+      <li>Pulsa «Instalar» y escribe tu contraseña.</li>
+      <li>Cat-ode aparece entre tus aplicaciones.</li>
+    </ol>
+    <p>Desde la terminal es una sola orden: <code>sudo apt install ./cat-ode_amd64.deb</code></p>
+    <p class="para" style="margin-top:16px"><b>Cualquier otro Linux (Fedora, Arch, openSUSE…)</b></p>
+    <a class="boton sec" href="https://github.com/cat-ode/cat-ode.github.io/releases/download/descargas/Cat-ode-x86_64.AppImage">Descargar el AppImage (301 MB)</a>
+    <ol class="pasos">
+      <li>Botón derecho sobre el archivo → «Propiedades» → «Ejecutable como programa» (o «Es ejecutable»).</li>
+      <li>Doble clic para abrirla. No hay nada que instalar.</li>
+    </ol>
+  </div>
+  <div class="carta" id="apple">
+    <h3>🍎 iPhone, iPad y Mac</h3>
+    <p>De momento no hay versión: en iPhone y iPad Apple no deja instalar aplicaciones de fuera de su tienda, y la de Mac aún no está hecha.</p>
+  </div>
+</div>
+
+<h2>Lo que <b>conviene saber</b></h2>
+<ul class="lista">
+  <li>Como para ver no usa tu cuenta de Google, no se puede comentar y los vídeos con restricción de edad no se ven.</li>
+  <li>A veces YouTube pregunta «¿eres un bot?» cuando desde una misma conexión se le pide mucho; suele pasarse solo en unas horas.</li>
+  <li>Android no deja que una app se quede sola los enlaces de YouTube: Cat-ode te lleva al ajuste para elegirla, una vez.</li>
+  <li>Google ha anunciado que, desde 2027, Android pedirá que las apps de fuera de Play Store vengan de un desarrollador verificado; cuando llegue, habrá que registrarla.</li>
+  <li>De momento no hay versión para iPhone ni para Mac.</li>
+</ul>
+
+<footer>
+  Cat-ode · gratis y sin anuncios · <a href="https://github.com/cat-ode/cat-ode.github.io/releases/tag/descargas">todas las descargas</a> · Música del vídeo: «Voxel Revolution», Kevin MacLeod (incompetech.com), CC BY 4.0.
+</footer>
+</div>
+</body>
+</html>
