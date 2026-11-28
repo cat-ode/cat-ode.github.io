@@ -1,0 +1,3 @@
+# como todas sus apps: fuera de los buscadores
+User-agent: *
+Disallow: /

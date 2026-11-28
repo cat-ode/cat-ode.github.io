@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108">
+  <!-- Cat-ode · su gato con cascos de Napster (22/10/2026); lo genera arte/iconos/iconos.py: no se edita a mano -->
+  <g transform="translate(54 54) scale(0.762) translate(-54 -49.4)">
+    <path d="M2,54 C2,-17 106,-17 106,54" fill="none" stroke="#F4F4F4" stroke-width="16.8" stroke-linecap="round"/>
+    <path d="M2,54 C2,-17 106,-17 106,54" fill="none" stroke="#111317" stroke-width="12" stroke-linecap="round"/>
+    <g fill="#1A1D24" stroke="#1A1D24" stroke-width="5" stroke-linejoin="round"><path d="M7,62 L12,6 L44,30 Z M64,30 L96,6 L101,62 Z"/><path d="M7,65 a47,39 0 1,0 94,0 a47,39 0 1,0 -94,0 Z"/></g>
+    <g fill="#F4F4F4"><path d="M7,62 L12,6 L44,30 Z M64,30 L96,6 L101,62 Z"/><path d="M7,65 a47,39 0 1,0 94,0 a47,39 0 1,0 -94,0 Z"/></g>
+    <path fill="#FF7A00" d="M42,45 L42,87 L79,66 Z"/>
+    <path d="M-13,66 a15,25 0 1,0 30,0 a15,25 0 1,0 -30,0 Z" fill="#111317" stroke="#F4F4F4" stroke-width="2.4"/>
+    <path d="M-8.0,66 a7.5,15.5 0 1,0 15.0,0 a7.5,15.5 0 1,0 -15.0,0 Z" fill="none" stroke="#FF7A00" stroke-width="3.6"/>
+    <path d="M91,66 a15,25 0 1,0 30,0 a15,25 0 1,0 -30,0 Z" fill="#111317" stroke="#F4F4F4" stroke-width="2.4"/>
+    <path d="M101.0,66 a7.5,15.5 0 1,0 15.0,0 a7.5,15.5 0 1,0 -15.0,0 Z" fill="none" stroke="#FF7A00" stroke-width="3.6"/>
+  </g>
+</svg>
